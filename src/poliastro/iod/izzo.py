@@ -91,7 +91,7 @@ def _lambert(k, r1, r2, tof, M, numiter, rtol):
                                               gamma, rho, sigma)
         v1 = V_r1 * i_r1 + V_t1 * i_t1
         v2 = V_r2 * i_r2 + V_t2 * i_t2
-        yield v1, v2
+        return v1, v2
 
 
 @jit
