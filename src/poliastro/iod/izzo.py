@@ -5,8 +5,7 @@ import numpy as np
 from numpy import pi
 from astropy import units as u
 
-from poliastro.jit import jit
-from poliastro.util import cross
+from poliastro.jit import jit, norm, cross
 from poliastro.hyper import hyp2f1b
 
 
@@ -47,11 +46,6 @@ def lambert(k, r0, r, tof, M=0, numiter=35, rtol=1e-8):
 
     for v0, v in sols:
         yield v0 * u.km / u.s, v * u.km / u.s
-
-
-@jit('f8(f8[:])')
-def norm(vec):
-    return np.sqrt(np.dot(vec, vec))
 
 
 @jit

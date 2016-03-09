@@ -76,13 +76,3 @@ def norm(vec):
 
     """
     return np.sqrt(vec.dot(vec))
-
-
-@jit('f8[:](f8[:], f8[:])')
-def cross(vec1, vec2):
-    """ Calculate the cross product of two 3d vectors. """
-    result = np.zeros_like(vec1)
-    result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1]
-    result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2]
-    result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0]
-    return result
